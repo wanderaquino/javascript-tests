@@ -1,5 +1,5 @@
 const {readFile} = require("fs/promises");
-const {join} = require("path");
+const User  = require ("./User");
 const {error} = require("./errorConstants");
 
 const DEFAULT_OPTIONS = {

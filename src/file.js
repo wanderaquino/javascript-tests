@@ -39,28 +39,38 @@ class File {
                 }
             }
 
-            if(!isContentlengthAccepted) {
+            if(!isContentLengthAccepted) {
                 return {
                     error: error.MAX_LINES_ERROR,
                     valid: false
                 }
             }
-
-            return {valid: true}
+            return {valid: true};
     }
 
     static async getFileContent(filePath) {
-        const fileName = join(__dirname, filePath);
-        return (await readFile(fileName)).toString("utf8"); 
+        return (await readFile(filePath)).toString("utf8");
+    }
+
+    static parseCsvToJson (csvString) {
+        const lines = csvString.split("\n");
+        const firstLine = lines.shift();
+        const header = firstLine.split(",");
+
+        const users = lines.map((line) => {
+            const columns = line.split(",");
+
+            let user = {};
+            for(const index in columns) {
+                user[header[index]] = columns[index];
+            }
+
+            return new User(user);
+        });
+
+        return users;
+
     }
 }
 
-(async () => {
-    const resultHeader = await File.csvToJson("../mocks/invalidHeader-invalid.csv");
-    const resultEmpty = await File.csvToJson("../mocks/emptyFile-invalid.csv");
-    const resultLength = await File.csvToJson("../mocks/fourItems-invalid.csv");
-    const resultValid = await File.csvToJson("../mocks/threeItems-valid.csv");
-
-    console.log(resultHeader, resultEmpty, resultLength, resultValid);
-
-})();
+module.exports = File;

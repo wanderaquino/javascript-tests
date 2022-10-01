@@ -11,23 +11,19 @@ class File {
     static async csvToJson(filePath) {
         const fileContent = await File.getFileContent(filePath);
         const validationResponse = await File.isValidFile(fileContent);
-
-            if(!validationResponse.valid) {
-                return {
-                    error: validationResponse.error,
-                    valid: false
-                }
-            }
-
-            
-        return {valid: true} ;
+        if(!validationResponse.valid) {
+            throw new Error(validationResponse.error);
+        }
+        const users = File.parseCsvToJson(fileContent);
+        return users;
     }
+
 
     static async isValidFile(csvString, options = DEFAULT_OPTIONS) {
         const [header, ...items] = csvString.split("\n");
         const isHeaderValid = header === options.fields.join(",");
         const isEmptyFile = items.length === 0;
-        const isContentlengthAccepted = (items.length > 0 && items.length <= options.maxLines);
+        const isContentLengthAccepted = (items.length > 0 && items.length <= options.maxLines);
         
             if(!isHeaderValid) {
                 return {

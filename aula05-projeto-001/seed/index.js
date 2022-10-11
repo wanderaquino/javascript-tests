@@ -1,7 +1,7 @@
 const faker = require("faker");
 const Car = require("../src/entities/car");
 const CarCategory = require("../src/entities/carCategory");
-const Customer = require("../../aula05-projeto-001/seed");
+const Customer = require("../src/entities/customer");
 const {join} = require("path");
 const{writeFile} = require("fs/promises");
 const seederBaseFolder = join(__dirname, "../","database");
@@ -16,6 +16,8 @@ const carCategory = new CarCategory({
 });
 
 const cars = [];
+const customers = [];
+
 
 for (let i = 0; i <= ITEMS_AMOUNT; i ++) {
     const car = new Car({
@@ -33,8 +35,9 @@ for (let i = 0; i <= ITEMS_AMOUNT; i ++) {
     const customer = new Customer({
         id: faker.datatype.uuid(),
         name: faker.name.findName(),
-        age: faker.random.number
+        age: faker.datatype.number({min:18, max:50})
     })
+    customers.push(customer);
 }
 
 const write = (filename, data) => writeFile(join(seederBaseFolder, filename), JSON.stringify(data));
@@ -43,5 +46,7 @@ const write = (filename, data) => writeFile(join(seederBaseFolder, filename), JS
 
     await write ("cars.json", cars);
     await write ("carCategory.json", [carCategory]);
+    await write ("customers.json", [customers]);
+
     
 })()

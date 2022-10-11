@@ -1,0 +1,23 @@
+[
+    {
+      "id": "e56d32cc-30fa-4e1c-b4da-c3a687d18b28",
+      "name": "LeBaron",
+      "releaseYear": 2022,
+      "available": true,
+      "gasAvailable": true
+    },
+    {
+      "id": "a96f057c-f415-4aa3-a3a5-4ebe1f23b667",
+      "name": "Camry",
+      "releaseYear": 2021,
+      "available": true,
+      "gasAvailable": true
+    },
+    {
+      "id": "2eb509d3-9996-4425-b041-424e3ceda077",
+      "name": "Corvette",
+      "releaseYear": 2022,
+      "available": true,
+      "gasAvailable": true
+    }
+]

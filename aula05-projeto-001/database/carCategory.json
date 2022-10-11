@@ -1,12 +1,12 @@
 [
     {
-      "id": "e7289368-57cd-4c47-84fa-43ac2252077e",
-      "name": "Sedan",
+      "id": "151b2512-5a0c-4632-ae8f-fc03132b4d79",
+      "name": "Crew Cab Pickup",
       "carIds": [
-        "e56d32cc-30fa-4e1c-b4da-c3a687d18b28",
-        "a96f057c-f415-4aa3-a3a5-4ebe1f23b667",
-        "2eb509d3-9996-4425-b041-424e3ceda077"
+        "3c3263a5-cc33-4d8d-975d-19f3984d1e6e",
+        "dd133b35-4e6d-4e8f-8e1b-05f279a9d67e",
+        "c86ab414-723c-42d7-9fb8-2060818b6c2f"
       ],
-      "price": "67.02"
+      "price": "86.97"
     }
-  ]
+]

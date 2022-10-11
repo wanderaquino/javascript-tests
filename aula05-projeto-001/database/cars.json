@@ -1,21 +1,21 @@
 [
     {
-      "id": "e56d32cc-30fa-4e1c-b4da-c3a687d18b28",
-      "name": "LeBaron",
+      "id": "3c3263a5-cc33-4d8d-975d-19f3984d1e6e",
+      "name": "Camry",
       "releaseYear": 2022,
       "available": true,
       "gasAvailable": true
     },
     {
-      "id": "a96f057c-f415-4aa3-a3a5-4ebe1f23b667",
-      "name": "Camry",
-      "releaseYear": 2021,
+      "id": "dd133b35-4e6d-4e8f-8e1b-05f279a9d67e",
+      "name": "Cruze",
+      "releaseYear": 2022,
       "available": true,
       "gasAvailable": true
     },
     {
-      "id": "2eb509d3-9996-4425-b041-424e3ceda077",
-      "name": "Corvette",
+      "id": "c86ab414-723c-42d7-9fb8-2060818b6c2f",
+      "name": "Model T",
       "releaseYear": 2022,
       "available": true,
       "gasAvailable": true

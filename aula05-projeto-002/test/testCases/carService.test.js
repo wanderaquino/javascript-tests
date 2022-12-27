@@ -1,8 +1,10 @@
-const {describe, it, before} = require("mocha");
+const {describe, it, before, beforeEach, afterEach} = require("mocha");
 const {expect} = require("chai")
 const CarService = require("../../src/service/carService");
 const {join} = require("path");
 const carsDataBase = join(__dirname, "./../../database","cars.json");
+const sinon = require("sinon");
+
 
 const mocks = {
     validCarCategory: require(join(__dirname, "../mocks/valid-carCategory.json")),
@@ -16,6 +18,14 @@ describe("CarService Test", () => {
         carService = new CarService({
             cars: carsDataBase
         });
+    });
+
+    beforeEach(() => {
+        sandbox = sinon.createSandbox();
+    });
+
+    afterEach(() => {
+        sandbox.restore();
     });
 
     it("Should retrieve a random position from Array", async () => {

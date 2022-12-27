@@ -35,6 +35,23 @@ describe("CarService Test", () => {
         expect(result).to.be.lte(data.length).and.to.be.gte(0);
     })
 
+    it("should choose the first id from carIds in carCategory", () => {
+        const carCategory = mocks.validCarCategory;
+        const carIndex = 0;
+
+        sandbox.stub(
+            carService,
+            carService.getRandomPositionOfArray.name
+        ).returns(carIndex);
+
+        const result = carService.chooseRandomCar(carCategory);
+        const expected = carCategory.carIds[carIndex];
+
+        expect(carService.getRandomPositionOfArray.calledOnce);
+        expect(result).to.be.equal(expected);
+
+    })
+
     it("Given a carCategory should return a available car", async () => {
         const result = await carService.getAvailableCar();
     })

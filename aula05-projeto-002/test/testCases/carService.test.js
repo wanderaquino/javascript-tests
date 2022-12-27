@@ -5,7 +5,6 @@ const {join} = require("path");
 const carsDataBase = join(__dirname, "./../../database","cars.json");
 const sinon = require("sinon");
 
-
 const mocks = {
     validCarCategory: require(join(__dirname, "../mocks/valid-carCategory.json")),
     validCustomer: require(join(__dirname, "../mocks/valid-customer.json")),

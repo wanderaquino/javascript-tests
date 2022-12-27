@@ -53,6 +53,15 @@ describe("CarService Test", () => {
     })
 
     it("Given a carCategory should return a available car", async () => {
-        const result = await carService.getAvailableCar();
+        const car = mocks.validCar;
+        const carCategory = Object.create(mocks.validCarCategory);
+        carCategory.carIds = [car.id];
+
+        sandbox.stub(carService.carRepository, carService.carRepository.find.name).resolves(car);
+        const expected = car;
+        const result = await carService.getAvailableCar(carCategory);
+
+
+        expect(result).to.be.deep.equal(expected);
     })
 })

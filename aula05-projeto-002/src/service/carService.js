@@ -5,8 +5,7 @@ class CarService {
         this.carRepository = new BaseRepository({file: cars});
     }
 
-
-    async getRandomPositionOfArray(array) {
+    getRandomPositionOfArray(array) {
         const arrayLenght  = array.length;
         return Math.floor(Math.random() * (arrayLenght));
     }

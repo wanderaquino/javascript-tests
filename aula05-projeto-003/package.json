@@ -1,0 +1,22 @@
+{
+  "name": "aula05-projeto-001",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "testExec": "mocha -w **/**/*.test.js",
+    "testCov": "nyc mocha **/**/*.test.js",
+    "seed": "node ./seed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "directories": {},
+  "description": "",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "faker": "^5.5.3",
+    "mocha": "^10.1.0",
+    "nyc": "^15.1.0",
+    "sinon": "^14.0.1"
+  }
+}
